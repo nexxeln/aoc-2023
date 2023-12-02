@@ -1,5 +1,4 @@
 with open(0) as f:
-    r = []
     lines = f.readlines()
     total = 0
 
@@ -19,6 +18,7 @@ with open(0) as f:
                 "blue": 0,
                 "green": 0,
             }
+
             for j in i.split(","):
                 count, color = j.strip().split(" ")
                 color_dict[color] = int(count)
@@ -27,6 +27,5 @@ with open(0) as f:
                 min_dict[k] = max(min_dict[k], color_dict[k])
 
         total += min_dict["red"] * min_dict["blue"] * min_dict["green"]
-
 
 print(total)
